@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects - BrainBoost</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>BrainBoost</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="subjects.html" class="active">Subjects</a>
+                <button class="btn-primary change-class-btn" id="changeClassBtn">
+                    <i class="fas fa-sync-alt"></i> Change Class
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subjects Header -->
+    <section class="subjects-header">
+        <div class="container">
+            <h1>Welcome to <span class="gradient-text">Class <span id="currentClass">-</span></span></h1>
+            <p>Choose a subject to start learning</p>
+        </div>
+    </section>
+
+    <!-- Subjects Grid -->
+    <section class="subjects-section">
+        <div class="container">
+            <div class="subjects-grid" id="subjectsGrid">
+                <!-- Subjects will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Button (Floating) -->
+    <button class="ai-chat-btn" id="aiChatBtn">
+        <i class="fas fa-robot"></i>
+        <span>Ask AI</span>
+    </button>
+
+    <!-- AI Chat Modal -->
+    <div class="modal" id="aiChatModal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-robot"></i> AI Learning Assistant</h2>
+                <button class="close-btn" id="closeChatModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="chat-container" id="chatContainer">
+                    <div class="chat-message bot-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm your AI learning assistant. Ask me anything about your subjects, homework, or any topic you're studying!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" placeholder="Ask me anything..." class="chat-input">
+                    <button id="sendChatBtn" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>BrainBoost</span>
+                </div>
+                <p>&copy; 2024 BrainBoost. Your free AI-powered learning companion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/subjects.js"></script>
+</body>
+</html>

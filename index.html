@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBoost - Your Free AI Learning Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>BrainBoost</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <button class="btn-primary" id="getStartedBtn">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Master Your Studies with <span class="gradient-text">AI-Powered Learning</span></h1>
+                <p class="hero-description">Free, personalized worksheets, AI explanations, and instant help for all your subjects. From Class 1 to Class 12.</p>
+                <button class="btn-hero" id="startLearningBtn">
+                    <span>Start Learning Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <i class="fas fa-robot"></i>
+                    <p>AI Assistant</p>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-book-open"></i>
+                    <p>Smart Worksheets</p>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>Instant Explanations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Everything You Need to Excel</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>AI-Generated Worksheets</h3>
+                    <p>Get personalized worksheets tailored to your class and subject needs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>24/7 AI Chat Support</h3>
+                    <p>Ask questions anytime and get instant, detailed explanations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Smart Explanations</h3>
+                    <p>Understand complex topics with easy-to-follow AI explanations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>All Subjects Covered</h3>
+                    <p>Math, Science, English, Hindi, Computer, Physics, Chemistry, Biology & more</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>100% Free</h3>
+                    <p>All features available for free. No hidden costs or subscriptions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Class 1-12</h3>
+                    <p>Content appropriate for every grade level and curriculum</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Class Selection Modal -->
+    <div class="modal" id="classModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Select Your Class</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Choose your class to get started with personalized learning materials</p>
+                <div class="class-grid">
+                    <div class="class-card" data-class="1">
+                        <div class="class-number">1</div>
+                        <p>Class 1</p>
+                    </div>
+                    <div class="class-card" data-class="2">
+                        <div class="class-number">2</div>
+                        <p>Class 2</p>
+                    </div>
+                    <div class="class-card" data-class="3">
+                        <div class="class-number">3</div>
+                        <p>Class 3</p>
+                    </div>
+                    <div class="class-card" data-class="4">
+                        <div class="class-number">4</div>
+                        <p>Class 4</p>
+                    </div>
+                    <div class="class-card" data-class="5">
+                        <div class="class-number">5</div>
+                        <p>Class 5</p>
+                    </div>
+                    <div class="class-card" data-class="6">
+                        <div class="class-number">6</div>
+                        <p>Class 6</p>
+                    </div>
+                    <div class="class-card" data-class="7">
+                        <div class="class-number">7</div>
+                        <p>Class 7</p>
+                    </div>
+                    <div class="class-card" data-class="8">
+                        <div class="class-number">8</div>
+                        <p>Class 8</p>
+                    </div>
+                    <div class="class-card" data-class="9">
+                        <div class="class-number">9</div>
+                        <p>Class 9</p>
+                    </div>
+                    <div class="class-card" data-class="10">
+                        <div class="class-number">10</div>
+                        <p>Class 10</p>
+                    </div>
+                    <div class="class-card" data-class="11">
+                        <div class="class-number">11</div>
+                        <p>Class 11</p>
+                    </div>
+                    <div class="class-card" data-class="12">
+                        <div class="class-number">12</div>
+                        <p>Class 12</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>BrainBoost</span>
+                </div>
+                <p>&copy; 2024 BrainBoost. Your free AI-powered learning companion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

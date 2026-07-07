@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Learning - BrainBoost</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>BrainBoost</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="subjects.html">Subjects</a>
+                <a href="#" class="active" id="subjectName">Subject</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subject Header -->
+    <section class="subject-header">
+        <div class="container">
+            <button class="back-btn" onclick="window.location.href='subjects.html'">
+                <i class="fas fa-arrow-left"></i> Back to Subjects
+            </button>
+            <h1 id="subjectTitle">Subject Name</h1>
+            <p id="subjectDescription">Learn and practice with AI-powered tools</p>
+        </div>
+    </section>
+
+    <!-- Learning Tabs -->
+    <section class="learning-section">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="worksheets">
+                    <i class="fas fa-file-alt"></i> Worksheets
+                </button>
+                <button class="tab-btn" data-tab="explanations">
+                    <i class="fas fa-lightbulb"></i> AI Explanations
+                </button>
+                <button class="tab-btn" data-tab="practice">
+                    <i class="fas fa-pencil-alt"></i> Practice Questions
+                </button>
+            </div>
+
+            <!-- Worksheets Tab -->
+            <div class="tab-content active" id="worksheets">
+                <div class="content-card">
+                    <h2>Generate AI Worksheets</h2>
+                    <p>Create custom worksheets based on topics you want to practice</p>
+                    
+                    <div class="worksheet-generator">
+                        <div class="form-group">
+                            <label for="topicInput">Enter Topic:</label>
+                            <input type="text" id="topicInput" placeholder="e.g., Pythagorean Theorem, Photosynthesis, Verbs..." class="input-field">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="difficultySelect">Difficulty Level:</label>
+                            <select id="difficultySelect" class="select-field">
+                                <option value="easy">Easy</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="questionsCount">Number of Questions:</label>
+                            <input type="number" id="questionsCount" value="10" min="5" max="50" class="input-field">
+                        </div>
+                        
+                        <button class="btn-generate" id="generateWorksheetBtn">
+                            <i class="fas fa-magic"></i> Generate Worksheet
+                        </button>
+                    </div>
+                    
+                    <div class="generated-content" id="worksheetContent" style="display: none;">
+                        <div class="content-header">
+                            <h3>Generated Worksheet</h3>
+                            <button class="btn-download" id="downloadWorksheetBtn">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                        <div class="worksheet-display" id="worksheetDisplay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Explanations Tab -->
+            <div class="tab-content" id="explanations">
+                <div class="content-card">
+                    <h2>AI-Powered Explanations</h2>
+                    <p>Get detailed explanations for any topic in this subject</p>
+                    
+                    <div class="explanation-generator">
+                        <div class="form-group">
+                            <label for="explanationTopic">What would you like to understand?</label>
+                            <input type="text" id="explanationTopic" placeholder="Enter any topic or concept..." class="input-field">
+                        </div>
+                        
+                        <button class="btn-generate" id="getExplanationBtn">
+                            <i class="fas fa-brain"></i> Get Explanation
+                        </button>
+                    </div>
+                    
+                    <div class="generated-content" id="explanationContent" style="display: none;">
+                        <div class="content-header">
+                            <h3>AI Explanation</h3>
+                        </div>
+                        <div class="explanation-display" id="explanationDisplay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Tab -->
+            <div class="tab-content" id="practice">
+                <div class="content-card">
+                    <h2>Practice Questions</h2>
+                    <p>Test your knowledge with AI-generated practice questions</p>
+                    
+                    <div class="practice-generator">
+                        <div class="form-group">
+                            <label for="practiceTopic">Topic to Practice:</label>
+                            <input type="text" id="practiceTopic" placeholder="Enter topic name..." class="input-field">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="questionType">Question Type:</label>
+                            <select id="questionType" class="select-field">
+                                <option value="mcq">Multiple Choice</option>
+                                <option value="short">Short Answer</option>
+                                <option value="long">Long Answer</option>
+                                <option value="mixed">Mixed</option>
+                            </select>
+                        </div>
+                        
+                        <button class="btn-generate" id="generatePracticeBtn">
+                            <i class="fas fa-tasks"></i> Generate Questions
+                        </button>
+                    </div>
+                    
+                    <div class="generated-content" id="practiceContent" style="display: none;">
+                        <div class="content-header">
+                            <h3>Practice Questions</h3>
+                        </div>
+                        <div class="practice-display" id="practiceDisplay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Button (Floating) -->
+    <button class="ai-chat-btn" id="aiChatBtn">
+        <i class="fas fa-robot"></i>
+        <span>Ask AI</span>
+    </button>
+
+    <!-- AI Chat Modal -->
+    <div class="modal" id="aiChatModal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-robot"></i> AI Learning Assistant</h2>
+                <button class="close-btn" id="closeChatModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="chat-container" id="chatContainer">
+                    <div class="chat-message bot-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm here to help you with <span id="chatSubjectName">this subject</span>. Ask me anything!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" placeholder="Ask me anything..." class="chat-input">
+                    <button id="sendChatBtn" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>BrainBoost</span>
+                </div>
+                <p>&copy; 2024 BrainBoost. Your free AI-powered learning companion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/learn.js"></script>
+</body>
+</html>
